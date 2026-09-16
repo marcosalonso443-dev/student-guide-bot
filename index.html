@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#3156c8">
+  <title>Student Guide Bot</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div>
+        <p class="eyebrow">STUDENT GUIDE BOT</p>
+        <h1>Plan your study day</h1>
+      </div>
+      <button id="clear-button" class="secondary" type="button">Clear data</button>
+    </header>
+
+    <section class="layout" aria-label="Study planner">
+      <aside class="panel tasks-panel">
+        <h2>Study tasks</h2>
+        <form id="task-form" class="task-form">
+          <label>Task name<input id="task-name" required maxlength="120" placeholder="Example: Read chapter 3"></label>
+          <label>Due date<input id="task-due-date" type="date"></label>
+          <button type="submit">Add task</button>
+        </form>
+        <ul id="task-list" class="task-list" aria-live="polite"></ul>
+      </aside>
+
+      <section class="panel chat-panel">
+        <div id="messages" class="messages" aria-live="polite"></div>
+        <form id="chat-form" class="chat-form">
+          <label class="sr-only" for="chat-input">Message Student Guide Bot</label>
+          <input id="chat-input" autocomplete="off" placeholder="Try: plan my day" maxlength="500">
+          <button type="submit">Send</button>
+        </form>
+        <p class="hint">Try: “plan my day”, “what is due?”, or “add study Algebra”.</p>
+      </section>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
